@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
       to:   to_number,
       date: date_sent,
       media_url: "https://www.cia.gov/library/publications/the-world-factbook/graphics/flags/large/sp-lgflag.gif",
-      body: "Yo creo que estoy gastando mucho dienro haciendo esto, baby!"
+      body: "Yo creo que estoy gastando mucho dienro haciendo esto, baby!#{today}"
 
       )
     end
