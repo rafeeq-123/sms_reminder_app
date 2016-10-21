@@ -14,15 +14,21 @@ class MessagesController < ApplicationController
   end
 
   def send(phone_number)
+    today = Time.now
+    date_sent = params["DateSent"]
     message_body = params["Body"]
     to_number = params["To"]
     boot_twilio
     @client.messages.create(
       from: Rails.application.secrets.twilio_number,
       to:   to_number,
-      body: 'You won Congrats on your new Mini!! We will be sending you more information for your new car!'
-    )
-  end
+      date: date_sent,
+      media_url: "https://www.cia.gov/library/publications/the-world-factbook/graphics/flags/large/sp-lgflag.gif",
+      body: "Yo creo que estoy gastando mucho dienro haciendo esto, baby!"
+
+      )
+    end
+
 
   private
 
